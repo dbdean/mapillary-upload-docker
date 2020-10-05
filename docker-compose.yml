@@ -1,0 +1,5 @@
+version: "3.8"
+services:
+  mappillary-tools:
+    build: https://github.com/mapillary/mapillary_tools.git
+
