@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  mappillary-tools:
+  mapillary_tools:
     build: https://github.com/mapillary/mapillary_tools.git
     volumes:
       - ./config.mapillary:/root/.config/mapillary
