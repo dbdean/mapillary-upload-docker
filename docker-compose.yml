@@ -3,9 +3,9 @@ services:
   mapillary_tools:
     build: https://github.com/mapillary/mapillary_tools.git
     command: mapillary_tools send_videos_for_processing --advanced --video_import_path to_upload/ --user_name $MAPILLARY_USER
+    restart: on-failure
     volumes:
       - ./config.mapillary:/root/.config/mapillary
       - ./to_upload:/source/mapillary_tools/to_upload
-
     environment:
       PYTHONUNBUFFERED: 1
