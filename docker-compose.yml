@@ -10,5 +10,5 @@ services:
     environment:
       PYTHONUNBUFFERED: 1
     labels:
-      com.docker-tc.enabled:1
-      com.docket-tc.limit:mbps
+      com.docker-tc.enabled:"1"
+      com.docket-tc.limit:"mbps"
