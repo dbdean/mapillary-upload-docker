@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   mapillary_tools:
-    build: https://github.com/mapillary/mapillary_tools.git
+    build: https://github.com/mapillary/mapillary_tools.git#:docker
     command: mapillary_tools send_videos_for_processing --advanced --video_import_path to_upload/ --user_name $MAPILLARY_USER
     restart: unless-stopped
     volumes:
