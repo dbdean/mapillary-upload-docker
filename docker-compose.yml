@@ -2,7 +2,11 @@ version: "3.8"
 services:
   mapillary_tools:
     build: https://github.com/mapillary/mapillary_tools.git#:docker
-    command: mapillary_tools send_videos_for_processing --advanced --video_import_path to_upload/ --user_name $MAPILLARY_USER
+    command: >-
+      mapillary_tools video_process_and_upload --video_import_path /to_upload/
+         --geotag_source "blackvue_videos" --interpolate_directions
+         --video_sample_interval 1 --user_name $MAPILLARY_USER
+         --advanced --use_gps_start_time --geotag_source_path /to_upload/
     restart: unless-stopped
     volumes:
       - ./config.mapillary:/root/.config/mapillary
