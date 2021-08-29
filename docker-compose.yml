@@ -9,7 +9,7 @@ services:
         --use_gps_start_time --interpolate_directions --video_sample_interval 0.5
         --device_make "Blackvue" --device_model "DR900S-1CH" --overwrite_EXIF_gps_tag
         --duplicate_distance 1.0
-    restart: unless-stopped
+#    restart: unless-stopped
     volumes:
       - ./config.mapillary:/root/.config/mapillary
       - ./to_upload:/to_upload
