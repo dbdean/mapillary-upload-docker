@@ -3,7 +3,8 @@ services:
   mapillary_tools:
     build: https://github.com/mapillary/mapillary_tools.git#main:docker
     command: >-
-      mapillary_tools video_process_and_upload $INPUT
+      mapillary_tools --verbose
+        video_process_and_upload $INPUT
         --user_name $MAPILLARY_USER
         --geotag_source "blackvue_videos"
         --geotag_source_path $INPUT
