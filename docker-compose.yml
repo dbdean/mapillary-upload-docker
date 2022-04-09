@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   mapillary_tools:
-    build: https://github.com/mapillary/mapillary_tools.git#:docker
+    build: https://github.com/mapillary/mapillary_tools.git#main:docker
     command: >-
       mapillary_tools video_process_and_upload $INPUT
         --user_name $MAPILLARY_USER
