@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
-docker build https://github.com/mapillary/mapillary_tools.git#main:docker -t mapillary_tools
+source .env
+
+docker build https://github.com/mapillary/mapillary_tools.git#main:docker \
+       -t mapillary_tools:latest
 
 docker run \
-       -v ./config.mapillary:/root/.config/mapillary \
-       -v ./to_upload:/to_upload \
+       -v config.mapillary:/root/.config/mapillary \
+       -v to_upload:/to_upload \
        -e "PYTHONUNBUFFERED=1" \
+       --env-file .env \
+       mapillary_tools:latest \
        mapillary_tools --verbose \
         video_process_and_upload /to_upload \
         --user_name $MAPILLARY_USER \
